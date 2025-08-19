@@ -1,0 +1,263 @@
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+:focus,
+:focus-within,
+:focus-visible,
+:active,
+:target,
+:hover {
+    opacity: 1;
+    transition: opacity .2s ease-in-out;
+}
+
+:root {
+    --accent: #eea46d;
+    --background: #1e1e1e;
+    --default: #ccc;
+    --item: #262728;
+    --separator: #1e1e1e;
+}
+
+body {
+    background: var(--background);
+    color: var(--default);
+    font-family: Sans-serif;
+    font-size: 14px;
+}
+
+a,
+a:visited,
+a:active {
+    color: var(--accent);
+    text-decoration: none;
+    opacity: .9;
+}
+
+h1, h2, h3, h4, h5 {
+    display: inline-block;
+    font-weight: normal;
+}
+
+h1, h2 {
+    font-size: 14px;
+    padding: 0 8px;
+    word-break: break-word;
+}
+
+body > * {
+    position: relative;
+    overflow: hidden;
+    max-width: 580px;
+}
+
+header {
+    margin: 16px auto;
+    text-align: center;
+}
+
+header > a,
+header > a:active,
+header > a:hover,
+header > a:visited {
+    color: var(--default);
+    font-size: 20px;
+}
+
+header::first-letter {
+    color: var(--accent);
+}
+
+header > div {
+    font-size: small;
+    margin-top: 12px;
+}
+
+header > div > code:not(:last-child)::after {
+    content: "|";
+    margin: 0 6px;
+}
+
+header > form {
+    margin-top: 20px;
+}
+
+header > form > input {
+    background: var(--item);
+    border-color: var(--item);
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    color: var(--default);
+    opacity: 0.9;
+}
+
+form > input:hover {
+    opacity: 1;
+}
+
+header > form > input[type="text"] {
+    padding: 8px;
+}
+
+header > form > input[type="text"]:focus, form textarea:focus {
+    border-color: var(--item);
+}
+
+header > form > input[type="submit"] {
+    cursor: pointer;
+    padding: 8px 16px;
+}
+
+main {
+    margin: 0 auto;
+}
+
+main > form {
+    border-bottom: 1px solid var(--item);
+    border-top: 1px solid var(--item);
+    overflow: hidden;
+    padding-bottom: 8px;
+}
+
+main > form > textarea {
+    background: var(--item);
+    border-color: var(--item);
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    color: var(--default);
+    font-size: 14px;
+    margin: 8px 0;
+    opacity: 0.9;
+    padding: 16px;
+    width: 100%;
+}
+
+main > form > input {
+    background: var(--item);
+    border-radius: 3px;
+    border-width: 1px;
+    color: var(--accent);
+    cursor: pointer;
+    float: right;
+    font-weight: bold;
+    opacity: 0.9;
+    padding: 9px 16px;
+}
+
+form > input:hover {
+    opacity: 1;
+}
+
+/* pagination */
+main > a {
+    background: var(--item);
+    border-radius: 3px;
+    float: right;
+    font-size: small;
+    font-weight: bold;
+    margin-left: 8px;
+    opacity: .9;
+    padding: 8px 16px;
+}
+
+/* item row */
+main > div {
+    background-color: var(--item);
+    border-radius: 3px;
+    margin: 8px 0;
+    padding: 16px;
+}
+
+/* item row meta, controls */
+main > div > div {
+    border-top: 1px solid var(--separator);
+    font-size: small;
+    margin-top: 16px;
+    overflow: hidden;
+    padding-top: 16px;
+}
+
+main > div > div > ul {
+    list-style: none;
+}
+
+main > div > div > ul > li {
+    cursor: default;
+    float: left;
+}
+
+main > div > div > ul > li > span {
+    color: white;
+    display: inline-block;
+    font-size: smaller;
+    opacity: 0.7;
+}
+
+main > div > div > ul > li > span:hover {
+    opacity: 1;
+}
+
+main > div > div > ul > li:not(:last-child)::after {
+    content: "•";
+    margin: 0 6px;
+}
+
+main > div > div > ul > li > span.leechers {
+    background-image: url('default/leechers.svg');
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding-left: 16px;
+}
+
+main > div > div > ul > li > span.peers {
+    background-image: url('default/peers.svg');
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding-left: 16px;
+}
+
+main > div > div > ul > li > span.seeders {
+    background-image: url('default/seeders.svg');
+    background-position: left center;
+    background-repeat: no-repeat;
+    padding-left: 16px;
+}
+
+/* control actions */
+main > div > div > div {
+    float: right;
+    opacity: 0;
+}
+
+main > div:hover > div > div {
+    opacity: 1;
+}
+
+main > div > div > div > a {
+    background-position: center;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+main > div > div > div > a.magnet {
+    background-image: url('default/magnet.svg');
+}
+
+/* pagination info */
+main > span {
+    float: right;
+    font-size: small;
+    padding: 8px 4px;
+}
+
+footer {
+    font-size: small;
+    margin: 16px auto 36px;
+    text-align: center;
+}

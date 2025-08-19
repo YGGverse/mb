@@ -1,0 +1,33 @@
+{% extends "layout" %}
+{% block content %}
+    {% if token %}
+        <form action="/submit" method="post">
+            <textarea name="message" placeholder="Enter your message..."></textarea>
+            <input type="hidden" name="token" value="{{ token }}" />
+            <input type="submit" value="Submit" />
+        </form>
+    {% endif %}
+    {% if posts %}
+        {% for post in posts %}
+            <div>
+                <a name="{{ post.id }}"></a>
+                <p>{{ post.message }}</p>
+                <div>
+                    <ul>
+                        <li><a href="{{ post.href.post }}" title="Created">{{ post.time }}</a></li>
+                    </ul>
+                    {% if post.href.delete %}
+                    <div>
+                        <a rel="nofollow" href="{{ post.href.delete }}" title="Delete">Delete</a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div>Nothing.</div>
+    {% endif %}
+    {% if next %}<a href="{{ next }}">Next</a>{% endif %}
+    {% if back %}<a href="{{ back }}">Back</a>{% endif %}
+    {% if pagination_totals %}<span>{{ pagination_totals }}</span>{% endif %}
+{% endblock content %}

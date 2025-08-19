@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{{ meta_title }}</title>
+        {% if description %}
+            <meta name="description" content="{{ description }}" />
+        {% endif %}
+        <link rel="stylesheet" type="text/css" href="/theme/default.css?v={{ version }}" />
+    </head>
+    <body>
+        <header>
+            <a href="{{ home }}">{{ title }}</a>
+            {% if description %}<div>{{ description }}</div>{% endif %}
+            <form action="/" method="GET">
+                <input type="text" name="search" value="{% if search %}{{ search }}{% endif %}" placeholder="Search..." />
+                <input type="hidden" name="token" value="{{ token }}" />
+                <input type="submit" value="Search" />
+            </form>
+        </header>
+        <main>
+        {% block content %}{% endblock content %}
+        </main>
+        <footer>
+            <a href="/rss">RSS</a> |
+            <a href="https://github.com/yggverse/mb" title="v{{ version }}">GitHub</a>
+        </footer>
+    </body>
+</html>

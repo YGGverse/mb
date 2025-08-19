@@ -1,0 +1,17 @@
+{% extends "layout" %}
+{% block content %}
+<div>
+    <a name="{{ post.id }}"></a>
+    <p>{{ post.message }}</p>
+    <div>
+        <ul>
+            <li><a href="{{ post.href.post }}" title="Created">{{ post.time }}</a></li>
+        </ul>
+        {% if post.href.delete %}
+        <div>
+            <a rel="nofollow" href="{{ post.href.delete }}" title="Delete">Delete</a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock content %}
