@@ -21,12 +21,13 @@
     --default: #ccc;
     --item: #262728;
     --separator: #1e1e1e;
+    --font-family: Sans-serif;
 }
 
 body {
     background: var(--background);
     color: var(--default);
-    font-family: Sans-serif;
+    font-family: var(--font-family);
     font-size: 14px;
 }
 
@@ -136,6 +137,7 @@ main > form > textarea {
     opacity: 0.9;
     padding: 16px;
     width: 100%;
+    font-family: var(--font-family);
 }
 
 main > form > input {
