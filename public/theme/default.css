@@ -61,8 +61,10 @@ body > * {
 header {
     grid-column: 3 / 4;
     grid-row: 1;
+    height: fit-content;
     margin: 16px auto;
     position: sticky;
+    top: 16px;
 }
 
 header > a,
