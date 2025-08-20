@@ -14,8 +14,8 @@
             {% if description %}<p>{{ description }}</p>{% endif %}
             <form action="/" method="GET">
                 {% if token %}<input type="hidden" name="token" value="{{ token }}" />{% endif %}
-                <input type="text" name="search" value="{% if search %}{{ search }}{% endif %}" placeholder="Search..." />
-                <input type="submit" value="Search" />
+                <input type="text" name="search" value="{% if search %}{{ search }}{% endif %}" placeholder="Search..."
+                /><input type="submit" value="Search" />
             </form>
             <div>
                 <a href="/rss">RSS</a> |
