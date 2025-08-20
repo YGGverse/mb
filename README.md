@@ -8,6 +8,10 @@ Simple, js-less micro-blogging platform written in Rust.
 
 It uses the [Rocket](https://rocket.rs) framework and the [redb](https://www.redb.org) database for serving messages.
 
+## Demo
+
+![mb index page](https://github.com/user-attachments/assets/90e035bc-8511-4a8e-88a9-02a9e127d895)
+
 ## Install
 
 1. `git clone https://github.com/YGGverse/mb.git && cd mb`
