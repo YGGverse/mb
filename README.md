@@ -50,6 +50,8 @@ server {
     listen 80;
 
     location / {
+        # expires 15m;
+        # add_header Cache-Control "public, max-age=900";
         proxy_pass http://127.0.0.1:8000;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-Proto $scheme;
