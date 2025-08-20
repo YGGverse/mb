@@ -6,7 +6,7 @@
 
 Simple, js-less micro-blogging platform written in Rust.
 
-It uses the [Rocket](https://rocket.rs) framework and the [redb](https://www.redb.org) database for serving messages.
+It uses the [Rocket](https://rocket.rs) framework and [redb](https://www.redb.org) database for serving messages.
 
 ## Demo
 
