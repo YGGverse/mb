@@ -87,6 +87,7 @@ header > p {
 header > div {
     font-size: small;
     margin-top: 12px;
+    text-align: center;
 }
 
 header > div > code:not(:last-child)::after {
@@ -126,10 +127,6 @@ header > form > input[type="submit"] {
     cursor: pointer;
     margin-left: 8px;
     padding: 6px 16px;
-}
-
-header > div {
-    text-align: center;
 }
 
 main {
@@ -174,10 +171,6 @@ main > form > input {
     font-weight: bold;
     opacity: 0.9;
     padding: 7px 16px;
-}
-
-form > input:hover {
-    opacity: 1;
 }
 
 /* pagination */
