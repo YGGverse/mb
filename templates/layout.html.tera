@@ -11,19 +11,19 @@
     <body>
         <header>
             <a href="{{ home }}">{{ title }}</a>
-            {% if description %}<div>{{ description }}</div>{% endif %}
+            {% if description %}<p>{{ description }}</p>{% endif %}
             <form action="/" method="GET">
                 {% if token %}<input type="hidden" name="token" value="{{ token }}" />{% endif %}
                 <input type="text" name="search" value="{% if search %}{{ search }}{% endif %}" placeholder="Search..." />
                 <input type="submit" value="Search" />
             </form>
+            <div>
+                <a href="/rss">RSS</a> |
+                <a href="https://github.com/yggverse/mb" title="v{{ version }}">GitHub</a>
+            </div>
         </header>
         <main>
         {% block content %}{% endblock content %}
         </main>
-        <footer>
-            <a href="/rss">RSS</a> |
-            <a href="https://github.com/yggverse/mb" title="v{{ version }}">GitHub</a>
-        </footer>
     </body>
 </html>
