@@ -97,7 +97,7 @@ header > div > code:not(:last-child)::after {
 
 header > form {
     border-top: 1px solid var(--item);
-    margin-top: 16px;
+    margin-top: 10px;
 }
 
 header > form > input {
