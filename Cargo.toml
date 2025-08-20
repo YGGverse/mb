@@ -14,7 +14,6 @@ repository = "https://github.com/yggverse/mb"
 anyhow = "1.0"
 chrono = { version = "0.4.41", features = ["serde"] }
 clap = { version = "4.5", features = ["derive"] }
-plurify = "0.2"
 redb = "3.0"
 rocket = "0.5"
 rocket_dyn_templates = { version = "0.2", features = ["tera"] }

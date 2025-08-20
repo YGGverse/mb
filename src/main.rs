@@ -8,7 +8,6 @@ mod feed;
 use config::Config;
 use db::{Db, Order, Sort};
 use feed::Feed;
-use plurify::Plurify;
 use rocket::{
     State,
     form::Form,
@@ -70,13 +69,9 @@ fn index(
             back: page.map(|p| uri!(index(search, if p > 2 { Some(p - 1) } else { None }, token))),
             next: if page.unwrap_or(1) * config.limit >= posts.total { None }
                     else { Some(uri!(index(search, Some(page.map_or(2, |p| p + 1)), token))) },
-            pagination_totals: if posts.total > 0 { Some(format!(
-                "Page {} / {} ({} {} total)",
-                page.unwrap_or(1),
-                (posts.total as f64 / config.limit as f64).ceil(),
-                posts.total,
-                posts.total.plurify(&["post", "posts", "posts"])
-            )) } else { None },
+            total: posts.total,
+            page: page.unwrap_or(1),
+            pages: (posts.total as f64 / config.limit as f64).ceil(),
             posts: posts.posts.into_iter().map(|p| Post {
                 id: p.id,
                 time: p.time().format(&config.time_format).to_string(),

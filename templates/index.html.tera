@@ -29,5 +29,9 @@
     {% endif %}
     {% if next %}<a href="{{ next }}">Next</a>{% endif %}
     {% if back %}<a href="{{ back }}">Back</a>{% endif %}
-    {% if pagination_totals %}<span>{{ pagination_totals }}</span>{% endif %}
+    {% if total %}
+        <span>
+            Page {{ page }} / {{ pages }} ({{ total }} post{{ total | pluralize(plural="s") }} total)
+        </span>
+    {% endif %}
 {% endblock content %}
