@@ -10,7 +10,7 @@ It uses the [Rocket](https://rocket.rs) framework and the [redb](https://www.red
 
 ## Demo
 
-![mb v0.1.1 index page](https://github.com/user-attachments/assets/07b49ecd-fde7-460a-8702-34f30fb116ba)
+![mb v0.1.1 index page](https://github.com/user-attachments/assets/1e8e3685-3b0b-4b35-bfd7-14154f71e946)
 
 ## Install
 
