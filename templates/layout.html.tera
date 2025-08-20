@@ -13,8 +13,8 @@
             <a href="{{ home }}">{{ title }}</a>
             {% if description %}<div>{{ description }}</div>{% endif %}
             <form action="/" method="GET">
+                {% if token %}<input type="hidden" name="token" value="{{ token }}" />{% endif %}
                 <input type="text" name="search" value="{% if search %}{{ search }}{% endif %}" placeholder="Search..." />
-                <input type="hidden" name="token" value="{{ token }}" />
                 <input type="submit" value="Search" />
             </form>
         </header>
