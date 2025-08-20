@@ -108,7 +108,7 @@ header > form > input {
     border-width: 1px;
     color: var(--default);
     margin-top: 16px;
-    opacity: 0.9;
+    opacity: .9;
 }
 
 form > input:hover {
@@ -156,7 +156,7 @@ main > form > textarea {
     margin: 8px 0;
     max-width: 100%;
     min-width: 100%;
-    opacity: 0.9;
+    opacity: .9;
     padding: 8px;
     width: 100%;
 }
@@ -169,7 +169,7 @@ main > form > input {
     cursor: pointer;
     float: right;
     font-weight: bold;
-    opacity: 0.9;
+    opacity: .9;
     padding: 7px 16px;
 }
 
@@ -190,7 +190,13 @@ main > div {
     background-color: var(--item);
     border-radius: 3px;
     margin-bottom: 8px;
+    opacity: .9;
     padding: 16px;
+}
+
+main > div:first-child {
+    font-size: 116%;
+    opacity: 1;
 }
 
 /* item row meta, controls */
@@ -215,7 +221,7 @@ main > div > div > ul > li > span {
     color: white;
     display: inline-block;
     font-size: smaller;
-    opacity: 0.7;
+    opacity: .7;
 }
 
 main > div > div > ul > li > span:hover {
