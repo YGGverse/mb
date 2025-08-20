@@ -134,6 +134,7 @@ main {
     grid-column: 1 / 4;
     grid-row: 1;
     margin: 16px auto;
+    min-width: 580px;
 }
 
 main > form {
