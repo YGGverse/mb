@@ -70,7 +70,7 @@ header > a:active,
 header > a:hover,
 header > a:visited {
     color: var(--default);
-    font-size: 20px;
+    font-size: 16px;
 }
 
 header::first-letter {
