@@ -171,7 +171,7 @@ main > form > input {
     float: right;
     font-weight: bold;
     opacity: 0.9;
-    padding: 9px 16px;
+    padding: 7px 16px;
 }
 
 form > input:hover {
