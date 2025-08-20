@@ -168,7 +168,7 @@ main > form > input {
     color: var(--accent);
     cursor: pointer;
     float: right;
-    font-weight: bold;
+    /*font-weight: bold;*/
     opacity: .9;
     padding: 7px 16px;
 }
@@ -179,7 +179,7 @@ main > a {
     border-radius: 3px;
     float: right;
     font-size: small;
-    font-weight: bold;
+    /*font-weight: bold;*/
     margin-left: 8px;
     opacity: .9;
     padding: 8px 16px;
