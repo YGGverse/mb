@@ -49,9 +49,15 @@ WantedBy=multi-user.target
 server {
     listen 80;
 
+    location ~* \.(jpg|jpeg|png|gif|ico|svg|css|js) {
+        expires 30d;
+        add_header Cache-Control "public, max-age=2592000";
+        proxy_pass http://127.0.0.1:8000;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+
     location / {
-        # expires 15m;
-        # add_header Cache-Control "public, max-age=900";
         proxy_pass http://127.0.0.1:8000;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-Proto $scheme;
