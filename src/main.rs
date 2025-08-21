@@ -219,7 +219,29 @@ fn rocket() -> _ {
         warn!("Canonical URL option is required for the RSS feed by the specification!") // @TODO
     }
     rocket::build()
-        .attach(Template::fairing())
+        .attach(Template::custom(|engines| {
+            engines.tera.register_filter("url", {
+                use regex::{Captures, Regex};
+                use rocket_dyn_templates::tera::{Error, Value};
+                Box::new(
+                    move |v: &Value,
+                          _: &std::collections::HashMap<String, Value>|
+                          -> Result<Value, Error> {
+                        match v.as_str() {
+                            Some(s) => match Regex::new(r"[A-z]+:\/\/(?:[^\s]+|$)") {
+                                Ok(r) => Ok(r
+                                    .replace_all(s, |c: &Captures| {
+                                        format!("<a href=\"{}\">{}</a>", &c[0], &c[0])
+                                    })
+                                    .into()),
+                                Err(e) => Err(Error::msg(e)),
+                            },
+                            None => Err(Error::msg("Expected a string")),
+                        }
+                    },
+                )
+            })
+        }))
         .configure(rocket::Config {
             port: config.port,
             address: config.host,

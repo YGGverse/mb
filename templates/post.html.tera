@@ -2,7 +2,7 @@
 {% block content %}
 <div>
     <a name="{{ post.id }}"></a>
-    <p>{{ post.message | linebreaksbr | safe }}</p>
+    <p>{{ post.message | url | linebreaksbr | safe }}</p>
     <div>
         <ul>
             <li><a href="{{ post.href.post }}" title="Created">{{ post.time }}</a></li>
