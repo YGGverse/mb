@@ -55,4 +55,8 @@ pub struct Config {
     /// Configure instance in the debug mode
     #[arg(long, default_value_t = false)]
     pub debug: bool,
+
+    /// Limit post max length to `n` chars (JS-less, `maxlength` attribute)
+    #[arg(long)]
+    pub post_max_chars: Option<usize>,
 }

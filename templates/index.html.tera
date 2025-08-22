@@ -2,7 +2,9 @@
 {% block content %}
     {% if token %}
         <form action="/submit" method="post">
-            <textarea name="message" placeholder="Enter your message..."></textarea>
+            <textarea name="message"
+                      placeholder="Enter your message..."
+                      {% if post_max_chars %}maxlength="{{ post_max_chars }}"{% endif %}></textarea>
             <input type="hidden" name="token" value="{{ token }}" />
             <input type="submit" value="Submit" />
         </form>

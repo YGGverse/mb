@@ -83,6 +83,7 @@ fn index(
             }).collect::<Vec<Post>>(),
             home: uri!(index(None::<&str>, None::<usize>, token)),
             version: env!("CARGO_PKG_VERSION"),
+            post_max_chars: config.post_max_chars,
             search,
             token
         },
